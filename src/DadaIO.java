@@ -52,7 +52,6 @@ public class DadaIO {
                 default: System.out.println("Invalid option.");
             }
         }
-        
         scan.close();
     }
 
@@ -65,7 +64,6 @@ public class DadaIO {
      *      1. creates a tempArray to perserve the original
      *      2. randomly prints user specified amount of lines with 8 words per row
      *      3. sets printed word to null to eliminate duplicate printing
-     * 
      */
     public static void printLines(String[] words, int lines) {
 
@@ -84,7 +82,6 @@ public class DadaIO {
                 }
                 
                 System.out.print(tempWords[randNum] + " ");
-
                 tempWords[randNum] = null;
             }
             System.out.println();
