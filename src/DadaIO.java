@@ -1,4 +1,3 @@
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class DadaIO {
@@ -28,13 +27,13 @@ public class DadaIO {
         int choice = 0;
 
         while (choice != 3) {
-            System.out.println("\n\t1. another?");
-            System.out.println("\t2. feed me a new article.");
-            System.out.println("\t3. exit.");
+            System.out.println("\n\t1. Another?");
+            System.out.println("\t2. Feed me a new article.");
+            System.out.println("\t3. Exit.");
 
             choice = scan.nextInt();
-            System.out.println();
             scan.nextLine();
+            System.out.println();
 
             switch (choice) {
                 case 1: printLines(words, lines); break;
@@ -49,8 +48,8 @@ public class DadaIO {
 
                         printLines(words, lines);
                         break;
-                case 3: System.out.println("goodbye."); break;
-                default: System.out.println("invalid option.");
+                case 3: System.out.println("Goodbye."); break;
+                default: System.out.println("Invalid option.");
             }
         }
         
