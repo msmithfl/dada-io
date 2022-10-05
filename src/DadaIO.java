@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class DadaIO {
@@ -23,6 +24,35 @@ public class DadaIO {
         }
 
         printLines(words, lines);
+
+        int choice = 0;
+
+        while (choice != 3) {
+            System.out.println("\n\t1. another?");
+            System.out.println("\t2. feed me a new article.");
+            System.out.println("\t3. exit.");
+
+            choice = scan.nextInt();
+            System.out.println();
+            scan.nextLine();
+
+            switch (choice) {
+                case 1: printLines(words, lines); break;
+                case 2: words = null; 
+                        System.out.println("More article please...");
+                        String newArticle = scan.nextLine();
+                        words = newArticle.split(" ");
+
+                        System.out.println("\nHow many lines should this next masterpiece be?");
+                        lines = scan.nextInt();
+                        System.out.println();
+
+                        printLines(words, lines);
+                        break;
+                case 3: System.out.println("goodbye."); break;
+                default: System.out.println("invalid option.");
+            }
+        }
         
         scan.close();
     }
