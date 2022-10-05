@@ -29,25 +29,34 @@ public class DadaIO {
 
     /*
      * Name: printLines
-     * @param: words (String[])
-     * @param: lines (int)
+     * @param words (String[])
+     * @param lines (int)
      * 
-     * Desc: prints out the words in a random order, restricted by the amount of lines
-     *          currently 8 words per line
+     * Purpose: 
+     *      1. creates a tempArray to perserve the original
+     *      2. randomly prints user specified amount of lines with 8 words per row
+     *      3. sets printed word to null to eliminate duplicate printing
      * 
      */
     public static void printLines(String[] words, int lines) {
+
+        String[] tempWords = new String[words.length];
+
+        for (int i = 0; i < words.length; i++) {
+            tempWords[i] = words[i];
+        }
+
         for (int i = 0; i < lines; i++) {
-
             for (int j = 0; j < 8; j++) {
-                int randNum = (int)(Math.random() * words.length);
+                int randNum = (int)(Math.random() * tempWords.length);
 
-                while (words[randNum] == null) {
-                    randNum = (int)(Math.random() * words.length);
+                while (tempWords[randNum] == null) {
+                    randNum = (int)(Math.random() * tempWords.length);
                 }
                 
-                System.out.print(words[randNum] + " ");
-                words[randNum] = null;
+                System.out.print(tempWords[randNum] + " ");
+
+                tempWords[randNum] = null;
             }
             System.out.println();
         }
