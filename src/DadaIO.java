@@ -73,6 +73,9 @@ public class DadaIO {
             tempWords[i] = words[i];
         }
 
+        System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+        System.out.println("\n\n\n");
+
         for (int i = 0; i < lines; i++) {
             for (int j = 0; j < 8; j++) {
                 int randNum = (int)(Math.random() * tempWords.length);
@@ -86,5 +89,8 @@ public class DadaIO {
             }
             System.out.println();
         }
+        
+        System.out.println("\n\n\n");
+        System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~");
     }
 }
